@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael W. Danko | Product, Systems, and Good Build Energy</title>
+    <meta
+      name="description"
+      content="Personal site for Michael W. Danko: product leadership, systems thinking, technical curiosity, and practical execution."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght,SOFT@9..144,500,100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="texture" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">mwd</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#lens">Lens</a>
+        <a href="#lab">Lab</a>
+        <a href="#notes">Notes</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </header>
+
+    <main id="top" class="container">
+      <section class="hero reveal">
+        <p class="eyebrow">Michael W. Danko | Charlotte, NC</p>
+        <h1>Hi, I’m Mike.</h1>
+        <p class="lead">
+          I help teams turn fuzzy ideas into things people can actually use. <br />
+          Usually that means product strategy, system thinking, and clear execution.
+        </p>
+        <p class="rotator-wrap">
+          Currently in:
+          <span id="rotator" class="rotator">product operator mode</span>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#connect">Say Hello</a>
+          <a class="btn btn-ghost" href="#lens">Get to Know Me</a>
+        </div>
+      </section>
+
+      <section id="about" class="panel reveal delay-1">
+        <h2>A quick profile</h2>
+        <p>
+          I sit in the overlap of product, engineering, data, and ops. I like messy,
+          high-context problems where someone needs to bring order, make decisions visible,
+          and keep the work moving.
+        </p>
+        <p>
+          Outside work, I’m usually exploring AI workflows, tinkering with app ideas,
+          watching sports, gaming, or taking on a new home project.
+        </p>
+      </section>
+
+      <section id="lens" class="panel reveal delay-2">
+        <h2>Pick a lens</h2>
+        <p class="section-intro">
+          Different people know me in different ways. Tap one to see the version they get.
+        </p>
+        <div class="lens-buttons" role="tablist" aria-label="Profile views">
+          <button class="lens-btn active" type="button" data-lens="operator">Operator</button>
+          <button class="lens-btn" type="button" data-lens="translator">Translator</button>
+          <button class="lens-btn" type="button" data-lens="builder">Builder</button>
+          <button class="lens-btn" type="button" data-lens="human">Human</button>
+        </div>
+        <article id="lens-card" class="lens-card" aria-live="polite">
+          <h3 id="lens-title">Calm operator energy</h3>
+          <p id="lens-copy">
+            I’m most useful when priorities are colliding and the path is unclear. I bring
+            structure, trim ambiguity, and keep teams aligned from planning to release.
+          </p>
+          <ul id="lens-list"></ul>
+        </article>
+      </section>
+
+      <section id="lab" class="reveal delay-3">
+        <h2>Playground</h2>
+        <p class="section-intro">A few things I’m actively exploring right now.</p>
+        <div class="chips" id="chips">
+          <button class="chip active" type="button" data-topic="ai">AI workflows</button>
+          <button class="chip" type="button" data-topic="ios">iOS learning</button>
+          <button class="chip" type="button" data-topic="docs">Product docs</button>
+          <button class="chip" type="button" data-topic="systems">Internal systems</button>
+        </div>
+        <div class="topic-card" id="topic-card" aria-live="polite">
+          <h3 id="topic-title">AI workflows</h3>
+          <p id="topic-copy">
+            Testing where LLMs can remove drag from product work without adding noise.
+          </p>
+          <p id="topic-footnote" class="muted">Current goal: save time on repetitive planning work.</p>
+        </div>
+      </section>
+
+      <section id="notes" class="panel reveal delay-4">
+        <h2>What I like writing about</h2>
+        <div class="notes-grid">
+          <article>
+            <h3>Shipping with less chaos</h3>
+            <p>How better scoping and better docs quietly change team velocity.</p>
+          </article>
+          <article>
+            <h3>Product + engineering handshake</h3>
+            <p>Practical ways to reduce friction in cross-functional delivery.</p>
+          </article>
+          <article>
+            <h3>Using AI like an adult</h3>
+            <p>Focus on reliable workflows instead of novelty demos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="connect" class="connect panel reveal delay-5">
+        <h2>Let’s connect</h2>
+        <p>
+          If you’re building something interesting and want a product partner who can bridge
+          strategy and implementation, I’m open to talking.
+        </p>
+        <div class="connect-actions">
+          <a class="btn btn-primary" href="mailto:hello@michaelwdanko.com">Email me</a>
+          <button id="copy-email" class="btn btn-ghost" type="button">Copy email</button>
+        </div>
+        <p id="copy-status" class="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Michael W. Danko</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
