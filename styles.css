@@ -231,7 +231,8 @@ p {
   font-size: 0.94rem;
   background: transparent;
   cursor: pointer;
-  transition: transform 200ms ease, background-color 200ms ease, color 200ms ease;
+  transition: transform 200ms ease, background 240ms ease, color 200ms ease, border-color 240ms ease,
+    box-shadow 240ms ease;
 }
 
 .btn:hover,
@@ -242,11 +243,13 @@ p {
 .btn-primary {
   color: #ffffff;
   background: linear-gradient(140deg, var(--brand) 0%, var(--brand-dark) 100%);
+  box-shadow: 0 8px 18px rgba(30, 78, 159, 0.18);
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: var(--brand-dark);
+  background: linear-gradient(140deg, #2562c8 0%, #17458f 100%);
+  box-shadow: 0 10px 20px rgba(23, 69, 143, 0.24);
 }
 
 .btn-ghost {
@@ -414,6 +417,11 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .hero-actions,
+  .connect-actions {
+    justify-content: center;
+  }
+
   .connect-row {
     flex-direction: column;
     align-items: flex-start;
@@ -431,20 +439,27 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .project-card .btn {
+    align-self: center;
+  }
 }
 
 @media (max-width: 760px) {
   .hero-profile {
     grid-template-columns: 1fr;
-    justify-items: start;
+    justify-items: center;
   }
 
   .profile-photo {
-    max-width: 280px;
+    width: min(90%, 460px);
+    max-width: none;
   }
 
   .profile-card {
-    max-width: 360px;
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
   }
 }
 
