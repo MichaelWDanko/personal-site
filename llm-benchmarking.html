@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLM Benchmarking | Michael W. Danko</title>
+    <meta
+      name="description"
+      content="A plain-English analysis of running language models locally, where local inference is already practical, and why agentic workflows introduce a much steeper performance and reliability challenge."
+    />
+    <link rel="canonical" href="https://michaelwdanko.com/llm-benchmarking.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://michaelwdanko.com/llm-benchmarking.html" />
+    <meta property="og:title" content="LLM Benchmarking | Michael W. Danko" />
+    <meta
+      property="og:description"
+      content="A practical look at running language models locally and why real agentic workflows are much harder than simple demos suggest."
+    />
+    <meta property="og:image" content="https://michaelwdanko.com/images/profile-photo2.jpeg" />
+    <meta property="og:image:alt" content="Michael Danko with Jax" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://michaelwdanko.com/llm-benchmarking.html" />
+    <meta name="twitter:title" content="LLM Benchmarking | Michael W. Danko" />
+    <meta
+      name="twitter:description"
+      content="A practical look at running language models locally and why real agentic workflows are much harder than simple demos suggest."
+    />
+    <meta name="twitter:image" content="https://michaelwdanko.com/images/profile-photo2.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="texture" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <main class="container whitepaper-main">
+      <section class="hero whitepaper-hero reveal">
+        <div>
+          <p class="kicker">Independent Analysis</p>
+          <h1>Can local AI do real work?</h1>
+        </div>
+        <p class="lead">
+          The short answer is yes, with an important qualifier. Local language models are already viable for a meaningful range of practical tasks.
+          The harder question is whether they can operate as dependable digital workers inside multi-step, tool-using workflows. That is where the gap between an impressive demo and a reliable system becomes much more visible.
+        </p>
+        <div class="whitepaper-meta">
+          <span class="meta-pill">7 local models benchmarked</span>
+          <span class="meta-pill">Direct and agent-based testing</span>
+          <span class="meta-pill">Apple Silicon laptop environment</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-ghost" href="index.html#projects">Back to home</a>
+          <a class="btn btn-primary" href="#technical-breakdown">Jump to technical breakdown</a>
+        </div>
+      </section>
+
+      <article class="article-panel reveal delay-1">
+        <div class="article-prose">
+          <h2>Abstract</h2>
+          <p>
+            This paper compares a set of local language models in two modes: first as direct model servers, and then inside a more realistic
+            agent workflow environment. The results suggest that local AI is already practical for many personal and professional tasks. At the same time,
+            they show that the jump from prompt-response interaction to reliable agentic execution is substantial. The more a workflow depends on long context,
+            tool usage, orchestration, and completion quality, the more model differences become meaningful.
+          </p>
+
+          <h2>Executive summary</h2>
+          <p>
+            Local inference is no longer a fringe experiment. On modern personal hardware, several models are already fast enough to feel useful in everyday work.
+            If the goal is summarization, drafting, note work, private assistance, or tightly scoped productivity tasks, local models are already credible.
+          </p>
+          <p>
+            The more difficult question is not whether a model can answer a prompt. It is whether the model can complete a job. In real settings, that often means
+            retaining context, making decisions across multiple turns, using tools correctly, and returning something complete enough to trust. That is where the gap
+            between direct performance and agent performance becomes most important.
+          </p>
+          <div class="callout">
+            <p>
+              <strong>Core conclusion:</strong> local models are ready for meaningful everyday use. Reliable local agents remain a much tougher engineering and model-selection problem.
+            </p>
+          </div>
+
+          <h2>Why this matters</h2>
+          <p>
+            A large share of public AI discussion still focuses on how quickly or fluently a model can answer a single prompt. That is a useful first indicator, but it is not a complete measure
+            of practical value. Most real work requires more than a single answer. It requires the model to stay aligned to the task, handle more context, manage tools, and maintain coherence until the work is complete.
+          </p>
+          <p>
+            This distinction matters especially for local AI. The case for local models is appealing because it combines privacy, lower marginal cost, direct control, and the ability to experiment without relying on a remote service.
+            But those advantages only matter if the model remains useful once it is placed inside the sort of workflow people actually want to run.
+          </p>
+
+          <h2>Methodology</h2>
+          <p>
+            The benchmark now uses two complementary tracks that share the <strong>same benchmark case names and the same underlying jobs</strong>.
+          </p>
+          <p>
+            <strong>The direct benchmark track</strong> measures raw model-server behavior on Hermes-mirrored cases. For the tool-based jobs, the direct track embeds the same fixture evidence directly into the prompt because a raw endpoint cannot actually read files or execute terminal commands.
+          </p>
+          <p>
+            <strong>The Hermes benchmark track</strong> runs those same underlying jobs inside a realistic workflow environment with real profiles, larger system prompts, tool schemas, file-reading tasks, terminal-enabled debugging tasks, and compliance checks that more closely resemble actual agent usage.
+          </p>
+          <p>
+            That means the comparison is now much closer to an apples-to-apples benchmark by job. It is still not execution-identical, because only the Hermes track performs live tool use, but it is now a much cleaner view of the cost of turning a raw model into a real local agent.
+          </p>
+          <div class="callout">
+            <p>
+              <strong>Important limitation:</strong> the direct and Hermes tracks are now aligned by benchmark job, but they are still not identical execution paths. The direct track uses embedded evidence where the Hermes track uses live tools.
+            </p>
+          </div>
+
+          <h2>Primary findings</h2>
+          <h3>1. Direct speed and practical usefulness are not the same thing</h3>
+          <p>
+            Some of the strongest raw direct benchmark results came from smaller models. That speed advantage often weakened once those same models had to manage tools, longer context windows, and multi-step workflow requirements.
+            In other words, the fastest endpoint was not always the most useful system.
+          </p>
+
+          <h3>2. Workflow reliability often mattered more than raw latency</h3>
+          <p>
+            A model that is moderately slower but remains stable under workflow pressure is usually more valuable than a faster model that truncates, stalls, skips tools, or produces incomplete work.
+            The strongest Hermes candidates were not simply the fastest. They were the models that remained more dependable as the workflow became more demanding.
+          </p>
+
+          <h3>3. Larger models held up better once orchestration pressure increased</h3>
+          <p>
+            The better-performing Gemma variants, especially Gemma 4 26B MLX, offered the strongest balance between acceptable direct performance and credible Hermes behavior.
+            This does not mean that larger is always better, but it does suggest that once the workflow becomes more agentic, capability and stability begin to matter more than isolated speed wins.
+          </p>
+
+          <h2>Interpretation by model family</h2>
+          <p>
+            The smaller Qwen models demonstrate the central lesson of the benchmark. They can appear very strong when measured directly, particularly on short and simple cases.
+            However, once moved into agent-style workflows, they become less compelling because workflow reliability declines and the performance gap grows sharply.
+          </p>
+          <p>
+            Qwen 3.6 35B A3B MLX shows a more capable profile than the earlier Qwen models and performs much better in Hermes on the conversation-oriented cases.
+            Even so, the harder workflow cases still reveal meaningful operational risk, including failures on some of the most demanding tasks.
+          </p>
+          <p>
+            The Gemma family produced the most balanced story. Gemma 4 E4B MLX was respectable directly, though less convincing on harder agent tasks. Gemma 4 26B MLX looked like the strongest overall balance point,
+            combining solid direct usability with the most persuasive Hermes behavior in the set. The GGUF variants were slower in some direct measurements, but in several cases they remained surprisingly competitive once workflow reliability became the main criterion.
+          </p>
+
+          <h2>Practical implications</h2>
+          <p>
+            If the goal is a local chatbot, a personal drafting assistant, or a private summarization tool, local AI is already in a good place. Multiple models in this benchmark appear viable for those kinds of controlled tasks.
+          </p>
+          <p>
+            If the goal is a local AI worker that can reliably handle multi-step tasks, use tools, and stay coherent through longer workflows, the field narrows quickly. At that point, model selection becomes much more important,
+            and the orchestration layer becomes part of the performance story, not just background plumbing.
+          </p>
+          <div class="callout">
+            <p>
+              <strong>Recommended reading of the results:</strong> direct benchmarks answer whether a model is fast enough; Hermes benchmarks answer whether it remains trustworthy once real workflow pressure is introduced.
+            </p>
+          </div>
+
+          <h2>Conclusion</h2>
+          <p>
+            Local AI is already viable. That is the clearest conclusion from this work. The stronger conclusion, however, is that local viability and local agent reliability are not the same thing.
+            As soon as context grows, tools enter the picture, and workflow correctness matters, the differences between models become much more pronounced.
+          </p>
+          <p>
+            The broader implication is encouraging rather than pessimistic. Local models do not need to be perfect to be useful. They only need to be matched to the right level of task complexity.
+            For simpler and more controlled use cases, the present generation is already strong. For more autonomous, multi-step agentic work, local AI is promising, but still selective.
+          </p>
+
+          <h2 class="divider-heading" id="technical-breakdown">Technical breakdown</h2>
+          <p>
+            The sections above provide the narrative interpretation. The tables below summarize the benchmark results, but they should be read carefully: the direct prompt suite and the Hermes workflow suite were different test sets.
+          </p>
+        </div>
+
+        <section class="tech-section">
+          <div class="tech-table-wrap">
+            <table class="tech-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Direct long conversation total</th>
+                  <th>Direct recall total</th>
+                  <th>Direct docs avg</th>
+                  <th>Hermes long conversation</th>
+                  <th>Hermes recall conversation</th>
+                  <th>Interpretation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Qwen 3.5 0.8B</td>
+                  <td>50.74 s</td>
+                  <td>24.55 s</td>
+                  <td>3.86 s</td>
+                  <td>373.98 s, 66.7% partial</td>
+                  <td>176.10 s, 66.7% partial</td>
+                  <td>Extremely fast at the raw endpoint, but still much less dependable once real workflow execution is introduced.</td>
+                </tr>
+                <tr>
+                  <td>Qwen 3.5 9B</td>
+                  <td>196.09 s</td>
+                  <td>54.46 s</td>
+                  <td>11.68 s</td>
+                  <td>1473.28 s, 66.7% partial</td>
+                  <td>790.57 s, 66.7% partial</td>
+                  <td>A clear example of raw performance remaining acceptable while real agent overhead and workflow fragility become very visible.</td>
+                </tr>
+                <tr>
+                  <td>Qwen 3.6 35B A3B MLX</td>
+                  <td>129.22 s</td>
+                  <td>49.33 s</td>
+                  <td>9.78 s</td>
+                  <td>2558.13 s, 100% pass</td>
+                  <td>687.01 s, 100% pass</td>
+                  <td>Much stronger than the smaller Qwens in Hermes, though still mixed on the hardest tool-heavy workflows.</td>
+                </tr>
+                <tr>
+                  <td>Gemma 4 E4B MLX</td>
+                  <td>115.85 s</td>
+                  <td>26.00 s</td>
+                  <td>8.66 s</td>
+                  <td>363.66 s, 100% pass</td>
+                  <td>143.66 s, 100% pass</td>
+                  <td>Reasonable direct performance and stable conversations, but less convincing on the harder workflow cases.</td>
+                </tr>
+                <tr>
+                  <td>Gemma 4 26B MLX</td>
+                  <td>161.62 s</td>
+                  <td>45.64 s</td>
+                  <td>9.97 s</td>
+                  <td>1085.22 s, 100% pass</td>
+                  <td>444.81 s, 100% pass</td>
+                  <td>The strongest overall balance in this benchmark between practical direct speed and believable Hermes performance.</td>
+                </tr>
+                <tr>
+                  <td>Gemma 4 E4B GGUF</td>
+                  <td>162.58 s</td>
+                  <td>34.11 s</td>
+                  <td>13.60 s</td>
+                  <td>101.89 s, 100% pass</td>
+                  <td>29.48 s, 100% pass</td>
+                  <td>Not a direct speed leader, but a surprisingly strong reliability-oriented option once workflow execution matters most.</td>
+                </tr>
+                <tr>
+                  <td>Gemma 4 26B A4B GGUF</td>
+                  <td>212.77 s</td>
+                  <td>111.82 s</td>
+                  <td>14.03 s</td>
+                  <td>1110.99 s, 100% pass</td>
+                  <td>720.85 s, 100% pass</td>
+                  <td>Powerful, but it carries a clear startup and memory cost and does not cleanly beat the strongest balanced alternative.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tech-table-wrap">
+            <table class="tech-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Hermes harder workflow signal</th>
+                  <th>Direct peak memory</th>
+                  <th>Direct startup time</th>
+                  <th>Practical read</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Qwen 3.5 0.8B</td>
+                  <td>Partial across every harder workflow</td>
+                  <td>1937.2 MB</td>
+                  <td>3.61 s</td>
+                  <td>Excellent for lightweight local experimentation, but not the best choice for dependable multi-step agent work.</td>
+                </tr>
+                <tr>
+                  <td>Qwen 3.5 9B</td>
+                  <td>Heavy slowdown and partial compliance on harder cases</td>
+                  <td>5313.0 MB</td>
+                  <td>4.02 s</td>
+                  <td>Respectable as a raw model, but still a weak fit for serious local orchestration.</td>
+                </tr>
+                <tr>
+                  <td>Qwen 3.6 35B A3B MLX</td>
+                  <td>Pass on conversations, partial on harder workflows</td>
+                  <td>2649.2 MB</td>
+                  <td>10.38 s</td>
+                  <td>Promising high-end option, but not yet the cleanest all-around Hermes recommendation.</td>
+                </tr>
+                <tr>
+                  <td>Gemma 4 E4B MLX</td>
+                  <td>Stable on conversations, weak on harder tool workflows</td>
+                  <td>4596.8 MB</td>
+                  <td>4.51 s</td>
+                  <td>Usable for simpler local workflows, but less convincing for robust agentic execution.</td>
+                </tr>
+                <tr>
+                  <td>Gemma 4 26B MLX</td>
+                  <td>Best balanced Hermes profile in the set</td>
+                  <td>13320.4 MB</td>
+                  <td>6.42 s</td>
+                  <td>The strongest all-around local Hermes candidate in this benchmark.</td>
+                </tr>
+                <tr>
+                  <td>Gemma 4 E4B GGUF</td>
+                  <td>Very strong schema-heavy Hermes behavior</td>
+                  <td>8955.8 MB</td>
+                  <td>5.80 s</td>
+                  <td>A strong value option if workflow reliability matters more than raw speed.</td>
+                </tr>
+                <tr>
+                  <td>Gemma 4 26B A4B GGUF</td>
+                  <td>Strong but mixed on the broader task set</td>
+                  <td>20828.1 MB</td>
+                  <td>18.22 s</td>
+                  <td>Powerful, but it carries a meaningful cost in memory, startup time, and operational weight.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <p>
+              <strong>Important context:</strong> the direct benchmark and the Hermes benchmark now evaluate the same benchmark jobs. The most important remaining difference is execution mode: the direct track uses embedded evidence, while the Hermes track uses live tools, profiles, and orchestration. The distance between those two results is now a much cleaner signal of real agent overhead.
+            </p>
+          </div>
+
+          <ul class="note-list">
+            <li>Strong direct benchmark results are useful, but they still do not guarantee dependable workflow behavior.</li>
+            <li>The aligned direct suite makes the direct-versus-Hermes gap easier to interpret than before.</li>
+            <li>If the goal is a local chatbot, multiple models are already viable.</li>
+            <li>If the goal is a local AI worker, model selection becomes much stricter and workflow design becomes part of the challenge.</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Michael W. Danko</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
