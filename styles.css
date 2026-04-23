@@ -512,6 +512,12 @@ footer {
 .whitepaper-hero {
   display: grid;
   gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.whitepaper-hero > * {
+  width: min(760px, 100%);
 }
 
 .kicker {
@@ -528,6 +534,7 @@ footer {
   flex-wrap: wrap;
   gap: 0.6rem 0.75rem;
   align-items: center;
+  justify-content: center;
 }
 
 .meta-pill {
