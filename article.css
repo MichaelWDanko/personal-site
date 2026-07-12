@@ -75,7 +75,7 @@ em { color: var(--accent); font-style: italic; }
 .article-prose { max-width: 900px; margin: 0 auto; }
 .article-prose h2 { margin: 4.2rem 0 1rem; color: var(--ink); font-size: clamp(2.25rem, 4vw, 3.7rem); }
 .article-prose h2:first-child { margin-top: 0; }
-.article-prose h3 { margin: 2.1rem 0 .65rem; color: var(--ink); font-family: var(--sans); font-size: 1.05rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.35; }
+.article-prose h3 { margin: 3rem 0 .7rem; color: var(--ink); font-family: var(--serif); font-size: 1.8rem; font-weight: 400; letter-spacing: -.02em; line-height: .98; }
 .article-prose p, .article-prose li { color: var(--body); font-size: 1rem; }
 .article-prose p { margin-bottom: 1.15rem; }
 .article-prose strong { color: var(--ink); font-weight: 700; }
