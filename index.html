@@ -3,182 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michael W. Danko | Product, Systems, and Good Dad Energy</title>
-    <meta
-      name="description"
-      content="Get to know Michael W. Danko: product leadership, systems thinking, technical curiosity, and practical execution."
-    />
+    <title>Michael W. Danko | Product leader and builder</title>
+    <meta name="description" content="Michael W. Danko is a product leader and builder working across software, systems, and practical AI." />
     <link rel="canonical" href="https://michaelwdanko.com/" />
-
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://michaelwdanko.com/" />
-    <meta property="og:title" content="Michael W. Danko | Product, Systems, and Good Dad Energy" />
-    <meta
-      property="og:description"
-      content="Get to know Michael W. Danko: product leadership, systems thinking, technical curiosity, and practical execution."
-    />
-    <meta property="og:image" content="https://michaelwdanko.com/images/profile-photo2.jpeg" />
-    <meta property="og:image:alt" content="Michael Danko with Jax" />
-
+    <meta property="og:title" content="Michael W. Danko | Product leader and builder" />
+    <meta property="og:description" content="Product leadership, practical systems, and software built to solve real problems." />
+    <meta property="og:image" content="https://michaelwdanko.com/images/site-social-card.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://michaelwdanko.com/" />
-    <meta name="twitter:title" content="Michael W. Danko | Product, Systems, and Good Dad Energy" />
-    <meta
-      name="twitter:description"
-      content="Get to know Michael W. Danko: product leadership, systems thinking, technical curiosity, and practical execution."
-    />
-    <meta name="twitter:image" content="https://michaelwdanko.com/images/profile-photo2.jpeg" />
-    <meta name="twitter:image:alt" content="Michael Danko with Jax" />
-
+    <meta name="twitter:image" content="https://michaelwdanko.com/images/site-social-card.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="cinematic.css?v=2" />
   </head>
   <body>
-    <div class="texture" aria-hidden="true"></div>
-    <div class="orb orb-a" aria-hidden="true"></div>
-    <div class="orb orb-b" aria-hidden="true"></div>
+    <div class="ambient" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="#top">MWD<span>.</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#thinking">Thinking</a><a href="#building">Building</a><a href="#about">About</a>
+      </nav>
+      <a class="header-contact" href="mailto:michaeldanko@icloud.com">Let’s talk <span>↗</span></a>
+    </header>
 
-    <main id="top" class="container">
-      <section class="hero reveal">
-        <div class="hero-grid">
-          <div>
-            <p class="eyebrow">Michael W. Danko | Charlotte, NC</p>
-            <h1>Hi, I’m Mike.</h1>
-            <p class="rotator-wrap">
-              Currently in:
-              <span id="rotator" class="rotator">figure-it-out mode</span>
-            </p>
-            <p class="lead">
-              I like jumping into complex projects and taking them over the finish line.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-ghost" href="#work">My Approach</a>
-              <a class="btn btn-ghost" href="#projects">What I’m Building</a>
-              <a class="btn btn-primary" href="#connect">Email Me</a>
-            </div>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Product leader · Builder · Charlotte, NC</p>
+          <h1>I turn complex<br />problems into<br /><em>clear direction.</em></h1>
+          <p class="mode-line">Currently in: <span id="mode-rotator" aria-live="polite">figure-it-out mode</span></p>
+          <div class="hero-bottom">
+            <p>I work where product, technology, and execution meet—making hard things understandable, useful, and real.</p>
+            <a class="text-link" href="#building">Explore my work <span>↓</span></a>
           </div>
-          <aside class="hero-profile">
-            <img
-              class="profile-photo"
-              src="images/profile-photo2.jpeg"
-              alt="Michael Danko with Jax"
-              onerror="this.onerror=null;this.src='images/profile-photo.jpg';"
-            />
-            <div class="profile-card">
-              <p class="profile-name">Michael W. Danko</p>
-              <p class="profile-title">Problem solver, builder, and proud dog dad</p>
-              <ul class="profile-highlights">
-                <li>Likes simple plans and real progress</li>
-                <li>Product, tech, and process minded</li>
-                <li>Family, sports, and Jax time</li>
-              </ul>
-            </div>
-          </aside>
+        </div>
+        <div class="hero-portrait reveal" aria-label="Portrait of Michael Danko with Jax">
+          <div class="portrait-frame"><img src="images/profile-photo2.jpeg" alt="Michael Danko with Jax" /></div>
+          <div class="portrait-note note-two"><span>01</span> Product<br /><span>02</span> Systems<br /><span>03</span> AI</div>
         </div>
       </section>
 
-      <section id="work" class="panel reveal delay-1">
-        <h2>How I Approach Things</h2>
-        <p class="section-intro">
-          This applies to work, projects, and pretty much everything else.
-        </p>
+      <section id="thinking" class="manifesto reveal">
+        <p class="section-number">01 / Approach</p>
+        <blockquote>I like figuring out what actually needs to be done, making a clear plan, and <em>sticking with it</em> until it works.</blockquote>
+        <div class="principles">
+          <article><span>01</span><h3>Make sense of the mess</h3><p>I like taking something complicated, asking a lot of questions, and finding a way forward that makes sense.</p></article>
+          <article><span>02</span><h3>Try things and learn</h3><p>I would rather test an idea, see what happens, and adjust than spend forever trying to make the perfect plan.</p></article>
+          <article><span>03</span><h3>See it through</h3><p>Starting is fun, but I get the most satisfaction from sticking with something and making it real.</p></article>
+        </div>
+      </section>
+
+      <section id="building" class="work-section">
+        <div class="section-heading reveal"><div><p class="section-number">02 / Selected work</p><h2>Things I’m<br /><em>building & exploring.</em></h2></div><p>Independent products and practical research shaped by problems I wanted to understand better.</p></div>
         <div class="work-grid">
-          <article>
-            <h3>Start with what matters, then keep it simple</h3>
-            <p>
-              If something feels too complex, I simplify it until it is useful.
-            </p>
-          </article>
-          <article>
-            <h3>Test, learn, adjust</h3>
-            <p>I try things quickly, keep what works, and drop what does not.</p>
-          </article>
-          <article>
-            <h3>Follow through</h3>
-            <p>I care about finishing strong, not just having a good start.</p>
-          </article>
+          <a class="work-card work-featured reveal" href="llm-benchmarking.html">
+            <div class="work-art research-art" aria-hidden="true"><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><strong>7B</strong><small>LOCAL / TESTED</small></div>
+            <div class="work-copy"><p>Research · 2026</p><h3>Local AI,<br />Real Work</h3><p>A plain-English benchmark of local models, their strengths, and why agentic work raises the bar.</p><span class="card-link">Read the paper ↗</span></div>
+          </a>
+          <a class="work-card reveal" href="https://tether.michaelwdanko.com" target="_blank" rel="noreferrer">
+            <div class="work-art tether-art" aria-hidden="true">
+              <div class="product-brand tether-brand">
+                <img src="images/tether-app-icon.png" alt="" />
+                <div><strong>Tether</strong><span>Connections that matter</span></div>
+              </div>
+              <div class="tether-summary">
+                <div><strong>12</strong><span>People</span></div>
+                <div><strong>18</strong><span>Connections</span></div>
+                <div><strong>3</strong><span>Groups</span></div>
+              </div>
+            </div>
+            <div class="work-copy"><p>iOS app · Shipped</p><h3>Tether</h3><p>A thoughtful way to understand your network and stay connected to the people who matter.</p><span class="card-link">Visit Tether ↗</span></div>
+          </a>
+          <a class="work-card reveal" href="https://turfnote.michaelwdanko.com" target="_blank" rel="noreferrer">
+            <div class="work-art turf-art" aria-hidden="true">
+              <div class="product-brand turf-brand">
+                <img src="images/turfnote-brand-mark.svg" alt="" />
+                <div><strong>TurfNote</strong><span>Your lawn’s memory</span></div>
+              </div>
+              <div class="turf-timeline">
+                <div><i></i><span><strong>Mowed front yard</strong><small>Completed today · 2 zones</small></span></div>
+                <div><i></i><span><strong>Fertilizer</strong><small>Last applied 7 days ago</small></span></div>
+              </div>
+            </div>
+            <div class="work-copy"><p>Product · In development</p><h3>TurfNote</h3><p>A lawn logbook that keeps the history and context behind the next yard decision.</p><span class="card-link">Visit TurfNote ↗</span></div>
+          </a>
+          <a class="work-card reveal" href="https://covemail.michaelwdanko.com" target="_blank" rel="noreferrer">
+            <div class="work-art cove-art" aria-hidden="true">
+              <div class="product-brand cove-brand">
+                <img src="images/cove-mail-app-icon.png" alt="" />
+                <div><strong>Cove Mail</strong><span>Quiet email for Mac</span></div>
+              </div>
+              <div class="cove-window">
+                <div class="cove-sidebar"><span></span><span></span><span></span></div>
+                <div class="cove-messages"><strong>Project notes for review</strong><span></span><span></span></div>
+              </div>
+            </div>
+            <div class="work-copy"><p>macOS app · In development</p><h3>Cove Mail</h3><p>A calm, local-first email client for focused review and carefully permissioned AI workflows.</p><span class="card-link">Visit Cove Mail ↗</span></div>
+          </a>
         </div>
       </section>
 
-      <section id="projects" class="panel reveal delay-2">
-        <h2>What I’m Building</h2>
-        <p class="section-intro">
-          I recently shipped Tether, an app focused on staying connected with people who matter.
-          I am also publishing notes on local AI experiments and what it takes to run useful models on a personal machine.
-        </p>
-        <div class="project-stack">
-          <article class="project-card">
-            <div>
-              <p class="project-label">Featured</p>
-              <h3>Local AI, Real Work</h3>
-              <p>
-                A plain-English whitepaper on running AI models locally, where local models work well,
-                and why agentic workflows are much harder than simple prompt-response demos.
-              </p>
-            </div>
-            <a class="btn btn-primary" href="llm-benchmarking.html">Read the benchmark</a>
-          </article>
-
-          <!-- <article class="project-card project-card-secondary">
-            <div>
-              <p class="project-label">New draft</p>
-              <h3>How I use AI as a product owner</h3>
-              <p>
-                A blog-style walkthrough of how I use voice capture, frontier models, and artifact-specific skills
-                to turn rough thinking into structured product work.
-              </p>
-            </div>
-            <a class="btn btn-ghost" href="po-workflow.html">Read the workflow</a>
-          </article> -->
-
-          <article class="project-card project-card-secondary">
-            <div>
-              <p class="project-label">Also building</p>
-              <h3>Tether</h3>
-              <p>
-                Tether helps you keep relationships active with lightweight reminders and a clear view
-                of who you have not reached out to in a while.
-              </p>
-            </div>
-            <a
-              class="btn btn-ghost"
-              href="https://tether.michaelwdanko.com"
-              target="_blank"
-              rel="noreferrer"
-              >Visit Tether</a
-            >
-          </article>
-        </div>
-      </section>
-
-      <section id="connect" class="connect panel reveal delay-3">
-        <h2>Let’s Connect</h2>
-        <div class="connect-row">
-          <p>
-            If you want to talk product, technology, sports, or just connect, I am always up for a good conversation.
-          </p>
-          <div class="connect-actions">
-            <a class="btn btn-ghost" href="http://linkedin.com/in/michaelwdanko/" target="_blank" rel="noreferrer"
-              >LinkedIn</a
-            >
-            <a class="btn btn-ghost" href="https://github.com/MichaelWDanko" target="_blank" rel="noreferrer"
-              >GitHub</a
-            >
-            <a class="btn btn-primary" href="mailto:michaeldanko@icloud.com">Email Me</a>
-          </div>
-        </div>
+      <section id="about" class="about reveal">
+        <p class="section-number">03 / A little more</p>
+        <div class="about-grid"><h2>Curious by nature.<br /><em>Practical by choice.</em></h2><div><p>I’m Mike—a product leader who likes complicated projects, simple plans, and seeing good work make it over the finish line.</p><p>Outside of work, I’m usually with family and Jax, watching sports, or going too deep on a new technical rabbit hole.</p><div class="socials"><a href="https://linkedin.com/in/michaelwdanko/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MichaelWDanko" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:michaeldanko@icloud.com">Email ↗</a></div></div></div>
       </section>
     </main>
-
-    <footer>
-      <p>© <span id="year"></span> Michael W. Danko</p>
-    </footer>
-
+    <footer><p>Michael W. Danko</p><p>© <span id="year"></span> · Charlotte, North Carolina</p><a href="#top">Back to top ↑</a></footer>
     <script src="script.js"></script>
   </body>
 </html>

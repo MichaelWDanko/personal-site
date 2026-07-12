@@ -6,7 +6,7 @@
     <title>How I Use AI as a Product Owner | Michael W. Danko</title>
     <meta
       name="description"
-      content="A practical look at how Michael Danko uses voice capture, frontier models, and artifact-specific skills to turn rough thinking into real product-owner work."
+      content="A practical look at AI beyond code generation, and how workplace workflows can be redesigned around models, agents, and connected tools."
     />
     <link rel="canonical" href="https://michaelwdanko.com/po-workflow.html" />
 
@@ -15,19 +15,22 @@
     <meta property="og:title" content="How I Use AI as a Product Owner | Michael W. Danko" />
     <meta
       property="og:description"
-      content="A practical look at how I use voice capture, frontier models, and artifact-specific skills to turn rough thinking into real product-owner work."
+      content="A practical look at AI beyond code generation, and how workplace workflows can be redesigned around models, agents, and connected tools."
     />
-    <meta property="og:image" content="https://michaelwdanko.com/images/profile-photo2.jpeg" />
-    <meta property="og:image:alt" content="Michael Danko with Jax" />
+    <meta property="og:image" content="https://michaelwdanko.com/images/site-social-card.png" />
+    <meta property="og:image:alt" content="Michael W. Danko: Complex problems. Simple solutions." />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://michaelwdanko.com/po-workflow.html" />
     <meta name="twitter:title" content="How I Use AI as a Product Owner | Michael W. Danko" />
     <meta
       name="twitter:description"
-      content="A practical look at how I use voice capture, frontier models, and artifact-specific skills to turn rough thinking into real product-owner work."
+      content="A practical look at AI beyond code generation, and how workplace workflows can be redesigned around models, agents, and connected tools."
     />
-    <meta name="twitter:image" content="https://michaelwdanko.com/images/profile-photo2.jpeg" />
+    <meta name="twitter:image" content="https://michaelwdanko.com/images/site-social-card.png" />
+    <meta name="twitter:image:alt" content="Michael W. Danko: Complex problems. Simple solutions." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +38,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="article.css" />
   </head>
   <body>
     <div class="texture" aria-hidden="true"></div>
@@ -49,15 +52,14 @@
           <h1>How I use AI as a product owner</h1>
         </div>
         <p class="lead">
-          Voice capture lets me spend the most time sharing my thoughts. Even when they are incomplete and I am still
-          rambling, the latest frontier models paired with the right skills create a useful counterbalance and help drive
-          the work toward results.
+          Most of the AI conversation in tech is about writing code. This page is about the rest of the work: how AI can help reshape
+          planning, triage, synthesis, and execution for people whose day-to-day job is not software development.
         </p>
         <div class="whitepaper-meta" aria-label="Page topics">
-          <span class="meta-pill">Wispr Flow</span>
-          <span class="meta-pill">Repetitive work offloading</span>
-          <span class="meta-pill">Agent skills and MCP tools</span>
-          <span class="meta-pill">Jira-ready output</span>
+          <span class="meta-pill">Workflow redesign</span>
+          <span class="meta-pill">AI at work</span>
+          <span class="meta-pill">Agents and connected tools</span>
+          <span class="meta-pill">Product-owner execution</span>
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#workflow">See the workflow</a>
@@ -67,144 +69,153 @@
 
       <article class="article-panel reveal delay-1">
         <div class="article-prose">
-          <h2>What this page is really about</h2>
           <p>
-            This is not about handing product ownership over to AI. It is about finding the repetitive pieces of day-to-day work
-            that can be offloaded without giving up judgment. A lot of my work still depends on product thinking, context, and
-            tradeoff calls. What I want help with is the translation layer between rough thinking and a clean artifact.
+            Most AI discussion in tech starts with code generation. That makes sense. It is visible, easy to demo, and easy for engineers
+            to judge. It is also the use case most people recognize first.
           </p>
           <p>
-            That usually means turning voice notes, meeting fragments, screenshots, bug details, or half-formed requirements into
-            something structured enough to review and use. The model helps, but the real leverage comes from wrapping the model
-            in the right agent, skills, MCP connections, and workflow tools.
+            My point here is different. I do not write code day to day. I spend more time turning messy inputs into usable decisions,
+            plans, artifacts, and follow-through. So when I think about AI at work, I am less interested in whether it can replace a
+            developer for five minutes and more interested in how it can improve the workflows around the rest of the business.
           </p>
           <div class="callout">
             <p>
-              <strong>Core idea:</strong> models are the brain, but skills, MCP connections, and workflow tools are the muscle that let that brain actually get work done.
+              <strong>Core idea:</strong> the model does the reasoning, but the real value shows up when the workflow, tools, and systems around it are designed to make that reasoning usable.
             </p>
           </div>
 
           <h2 id="workflow">The day-to-day workflow</h2>
           <p>
-            The workflow works because each stage has a different job. Wispr Flow helps me capture momentum. The model helps me
-            reason over the input. The agent layer, skills, MCP connections, and other tools help turn that reasoning into
-            repeatable output I can actually use.
+            The workflow works because each stage has a different job. First I capture the thinking before I over-edit it. Then I use a
+            strong model to interpret it. After that, the agent layer, skills, MCP connections, and other tools turn it into repeatable
+            output I can actually use.
           </p>
 
           <div class="workflow-grid">
             <section class="workflow-step">
               <p class="workflow-step-number">01</p>
-              <h3>Talk first</h3>
+              <h3>Capture the problem while it is still fresh</h3>
               <p>
-                I use Wispr Flow when I already know what I mean but do not want to stop and type a perfect request. I can talk through the problem, explain tradeoffs, describe the current state, and capture details while they are still fresh.
+                I usually start by talking through the problem instead of trying to type a perfect request. Voice works well for me,
+                but the real point is preserving the raw thinking before it gets flattened. That input might be a transcript, meeting
+                notes, screenshots, or half-formed requirements.
               </p>
             </section>
             <section class="workflow-step">
               <p class="workflow-step-number">02</p>
-              <h3>Route it through the right agent</h3>
+              <h3>Use the model to shape the mess</h3>
               <p>
-                Once the rough thought exists, I pass it into the agent setup I use for that kind of work. The model is still the
-                reasoning engine, but the agent is what gives it structure, context, and a path to produce something useful.
+                Once the rough thought exists, I pass it into the agent setup that fits the job. The model is still the reasoning engine,
+                but now it is working on something closer to the real problem instead of a tiny polished prompt that already lost context.
               </p>
             </section>
             <section class="workflow-step">
               <p class="workflow-step-number">03</p>
-              <h3>Bring the muscle with it</h3>
+              <h3>Connect it to the systems that matter</h3>
               <p>
-                This is where skills, MCP connections, and other tools matter. They stop the model from improvising every time and
-                give it guardrails for the kind of artifact I want, the systems it can look at, and the output shape it should follow.
+                This is where skills, MCP connections, and other tools matter. They stop the model from improvising every time and give
+                it guardrails for the artifact I want, the systems it can inspect, and the output shape it should follow.
               </p>
             </section>
           </div>
 
-          <h2>Why Wispr Flow matters more than it sounds</h2>
+          <h2>Coding is the obvious use case, but not the only one</h2>
           <p>
-            Voice capture lets me spend the most time sharing my thoughts instead of prematurely editing them. Even when I am
-            still incomplete and rambling, I usually end up with better raw material because I have not flattened the idea just
-            to make it fit a tidy little prompt box.
+            In software engineering circles, AI usually enters the conversation through code generation. People can see it, compare it,
+            and argue about which model writes better code. That is why it gets so much attention.
           </p>
           <p>
-            The latest frontier models help balance that out. When they are paired with the right skills, they can take messy
-            input, recognize the kind of artifact I am aiming for, and help drive the work toward something structured and
-            usable.
+            But most businesses do not run only on code. They run on planning, communication, decisions, triage, documentation,
+            coordination, and handoffs between people and systems. If AI only gets framed as a coding assistant, people miss the much
+            broader opportunity to improve how work moves through an organization.
           </p>
 
           <h2>Where Claude or Codex comes in</h2>
           <p>
-            Claude or Codex is the reasoning layer in this workflow. It can interpret rough notes, spot patterns, tighten language,
-            and help me move from a messy thought to a cleaner draft. On its own, though, a model is still mostly just a brain in a jar.
+            Claude or Codex is the reasoning layer in this workflow. It can interpret rough notes, spot patterns, tighten language, and
+            help me move from a messy thought to a cleaner draft. On its own, though, a model is still mostly a brain without much reach.
           </p>
           <p>
-            The output gets much better when the model is paired with the right delivery system. In practice, I care less about model
-            tribalism and more about whether the full setup can turn messy input into a clear artifact without flattening the intent behind it.
+            The output gets much better when the model is paired with the right delivery system. I care less about model tribalism and
+            more about whether the full setup can turn messy input into a clear artifact without flattening the intent behind it.
           </p>
 
           <h2>Why the skills matter</h2>
           <p>
-            The skills are what keep this from turning into generic AI writing. They encode the difference between a capability, an epic,
-            a story, a defect, and a tech-debt item. More importantly, they encode the guardrails for what makes each one good.
+            The skills are what keep this from turning into generic AI writing. I do not think of them as one-off prompts. I think of
+            them as reusable guardrails for recurring work. A good skill tells the agent what kind of artifact it is creating, what
+            context matters, what structure to follow, and what kind of drift to avoid.
           </p>
-          <ul class="note-list">
-            <li><strong>Capability writing</strong> keeps the work at roadmap altitude with scope, non-goals, dependencies, objectives, and likely epic workstreams.</li>
-            <li><strong>Epic writing</strong> forces a tighter structure with clear overview, concise acceptance criteria, and no fake engineering task breakdown.</li>
-            <li><strong>Story writing</strong> keeps the work product-led and outcome-focused instead of letting it drift into implementation planning.</li>
-            <li><strong>Defect writing</strong> separates expected results, actual results, and replication so triage is faster and less ambiguous.</li>
-            <li><strong>Tech debt writing</strong> preserves the engineering detail that matters when the work is really about maintenance, security, dependencies, or platform health.</li>
-          </ul>
           <p>
-            Put differently, the model brings the reasoning, but the skills bring the guardrails. They tell the agent what kind of
-            artifact it is writing, what good looks like, and what kind of drift to avoid.
+            Some of those skills are tied to Jira artifacts because that is a big part of my day-to-day workflow. But the point is
+            broader than Jira. When I find a task I repeat often enough, I want more than a smart model. I want a repeatable setup that
+            helps the model produce the right kind of output more consistently.
           </p>
 
           <h2>Why the agent layer matters</h2>
           <p>
-            The model alone can draft text. The agent layer is what lets me offload repetitive work. It is the difference between
-            asking for a nice sounding paragraph and asking a system to turn rough notes into the right Jira artifact with the right
-            structure, the right guardrails, and access to the right context.
+            The model alone can draft text. The agent layer is what lets me offload repetitive work. It is the difference between asking
+            for a nice-sounding paragraph and asking a system to turn rough notes into the right Jira artifact with the right structure,
+            guardrails, and access to the right context.
           </p>
           <p>
-            That is the bigger pattern I care about. I am always looking for repeatable work that happens often enough to deserve its
-            own setup. When I find one, I do not just save a prompt. I try to give the model better muscle through skills, tools, and
-            connections so the handoff gets stronger over time.
+            That is the bigger pattern I care about. When I find repeatable work worth offloading, I do not just save a prompt. I build
+            a better handoff so the model can do useful work inside a real process.
+          </p>
+
+          <h2>What this means for businesses and software providers</h2>
+          <p>
+            This shift is not only about how individuals work. It also changes what makes business software more valuable. If a product
+            cannot be accessed programmatically, it gets harder to include in modern AI workflows.
+          </p>
+          <p>
+            Over time, tools with usable APIs, structured exports, and predictable ways to read or write data will become more appealing
+            than tools that trap users inside manual interfaces. AI works best when it can participate in a workflow, not when it has to
+            stop at the edge of the screen.
+          </p>
+          <p>
+            I think more product teams should be asking a simple question: if a customer wants to use our product through an agent,
+            automation, or AI assistant, have we made that possible? If not, a competitor eventually will.
           </p>
 
           <h2 id="prompt-examples">Example prompt starters</h2>
           <p>
-            These are not final prompt templates yet. They are closer to the real handoff pattern I actually use: rough voice-captured context, a named artifact type, and a skill that keeps the result honest.
+            These are not final prompt templates yet. They are closer to the real handoff pattern I actually use: captured context,
+            a clear artifact goal, and a skill that keeps the result honest.
           </p>
 
           <div class="prompt-grid">
             <section class="prompt-card">
-              <p class="prompt-label">Capability draft</p>
+              <p class="prompt-label">Strategic artifact</p>
               <h3>Roadmap-level work</h3>
-              <pre><code>Take this Wispr Flow transcript and turn it into a Jira Capability.
+              <pre><code>Take these rough notes and turn them into a roadmap-level Jira artifact.
 
-Load the jira-capability-writing skill.
+Load the skill that matches the artifact type.
 Keep it strategic, not technical.
 Focus on the business problem, scope, non-goals, risks, and likely epic workstreams.
 Call out assumptions clearly.
 
-Transcript:
-[voice-captured notes go here]</code></pre>
+Input:
+[transcript, notes, or captured thinking go here]</code></pre>
             </section>
 
             <section class="prompt-card">
-              <p class="prompt-label">Story draft</p>
+              <p class="prompt-label">Delivery artifact</p>
               <h3>Product-ready delivery work</h3>
-              <pre><code>Turn these notes into a Jira Story.
+              <pre><code>Turn these notes into the right Jira delivery artifact.
 
-Load the jira-story-writing skill.
+Load the skill that matches the artifact type.
 Keep it product-led.
 Describe the required outcome and observable behavior.
 Do not over-prescribe implementation.
 Use acceptance criteria that a team can validate.
 
 Notes:
-[voice-captured notes go here]</code></pre>
+[transcript, notes, or captured thinking go here]</code></pre>
             </section>
 
             <section class="prompt-card">
-              <p class="prompt-label">Defect draft</p>
+              <p class="prompt-label">Triage artifact</p>
               <h3>Broken current behavior</h3>
               <pre><code>Turn this bug report into a Jira Defect.
 
@@ -214,11 +225,11 @@ Preserve any environment details that matter.
 Do not invent a root cause.
 
 Input:
-[voice notes, screenshots, and QA context go here]</code></pre>
+[notes, screenshots, and QA context go here]</code></pre>
             </section>
 
             <section class="prompt-card">
-              <p class="prompt-label">Tech debt draft</p>
+              <p class="prompt-label">Maintenance artifact</p>
               <h3>Engineering maintenance and risk reduction</h3>
               <pre><code>Turn these notes into a Jira Tech Debt issue.
 
@@ -228,9 +239,14 @@ Preserve versions, services, dependencies, and validation needs.
 Do not force product framing if this is really engineering maintenance.
 
 Context:
-[voice-captured notes go here]</code></pre>
+[transcript, notes, or captured thinking go here]</code></pre>
             </section>
           </div>
+
+          <p>
+            The exact skill changes based on the artifact I need, but the handoff pattern stays pretty similar. Capture the messy input,
+            name the kind of output I want, load the right guardrails, then review and refine.
+          </p>
 
           <h2>What this changes in practice</h2>
           <p>
@@ -239,26 +255,29 @@ Context:
             structure over and over again.
           </p>
           <p>
-            It also helps me stay consistent. If I am creating related artifacts across Jira, docs, and planning notes, the skills and
-            tools give me a much better starting point than asking a model to guess the format every time.
+            It also changes how I evaluate tools. I care more about whether a product can participate in an AI-assisted workflow than
+            whether it simply has a chatbot bolted onto the side. If a tool exposes the right data and actions, it becomes much easier
+            to include in the way people will actually work.
           </p>
 
           <h2>What is still evolving</h2>
           <p>
-            This workflow is still getting better. I want to add tighter examples, cleaner side-by-side comparisons between raw transcript input and final output, and direct links to the underlying skills and reusable prompt patterns.
+            This workflow is still getting better. I want to add tighter examples, cleaner side-by-side comparisons between rough input
+            and final output, and direct links to example skills and prompt patterns without turning the page into a giant list.
           </p>
           <p>
-            For now, this page is the first draft of the system: voice first, structured handoff second, artifact-specific guidance third, and human review at the end.
+            For now, this page is a first draft of the larger point: AI is not only about asking smarter questions or writing more code.
+            It is about redesigning workflows so useful work moves faster with better structure.
           </p>
 
           <h2>Bottom line</h2>
           <p>
-            The most useful AI workflow I have found as a product owner is not “open a chatbot and ask a smart question.” It is
-            identifying repetitive work worth offloading, then building a reliable path from messy thinking to the exact artifact I need next.
+            The most useful AI workflow I have found as a product owner is not "open a chatbot and ask a smart question." It is
+            identifying repeatable work worth offloading, then building a reliable path from messy thinking to the exact artifact I need next.
           </p>
           <p>
-            Wispr Flow helps me get the thought out. The model helps me reason through it. The agent layer, skills, MCP connections,
-            and other tools give that reasoning enough muscle to turn it into useful work.
+            Capture helps. The model helps. But the lasting value comes from adapting the workflow, connecting the tools, and making the
+            surrounding systems usable by agents and AI.
           </p>
         </div>
       </article>
