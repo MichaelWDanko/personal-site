@@ -112,7 +112,6 @@ h1 {
 
 .mode-line span {
   display: inline-block;
-  min-width: 18ch;
   color: var(--lime);
   transition: opacity 180ms ease, transform 180ms ease;
 }
