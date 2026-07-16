@@ -6,10 +6,10 @@ const reveals = document.querySelectorAll(".reveal");
 const modeRotator = document.getElementById("mode-rotator");
 const modes = [
   "figuring things out",
-  "build mode",
-  "solving problems",
-  "dad mode",
-  "always learning",
+  "build",
+  "problem-solving",
+  "dad",
+  "always-learning",
 ];
 
 if (modeRotator && !reducedMotion) {
