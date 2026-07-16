@@ -5,11 +5,11 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 const reveals = document.querySelectorAll(".reveal");
 const modeRotator = document.getElementById("mode-rotator");
 const modes = [
-  "figure-it-out mode",
+  "figuring things out",
   "build mode",
-  "problem-solving mode",
+  "solving problems",
   "dad mode",
-  "always-learning mode",
+  "always learning",
 ];
 
 if (modeRotator && !reducedMotion) {
