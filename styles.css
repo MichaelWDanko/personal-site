@@ -255,6 +255,15 @@ footer { font-size: .76rem; }
 .cove-messages span { display: block; width: 88%; height: 5px; margin-bottom: .5rem; border-radius: 5px; background: #8fbfd1; }
 .cove-messages span:last-child { width: 58%; }
 
+.keystone-art { display: block; padding: 1.1rem 1.25rem; background: linear-gradient(145deg, #fffefa, #f0ebe0); }
+.keystone-brand { color: #1c1b18; }
+.product-brand .keystone-mark { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; margin: 0; color: #1c1b18; border: 1px solid #1c1b18; background: #e85d3f; opacity: 1; font: 700 .78rem/1 var(--mono); }
+.keystone-spec { position: absolute; z-index: 2; left: 1.25rem; right: 1.25rem; bottom: 0; height: 122px; overflow: hidden; color: #1c1b18; border: 1px solid #1c1b18; border-bottom: 0; background: #fff; box-shadow: 0 16px 34px rgba(62,48,38,.12); }
+.keystone-spec > div { min-height: 30px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0 .75rem; color: #666158; border-bottom: 1px solid #d8d1c3; font: 500 .5rem/1.2 var(--mono); }
+.keystone-spec code { display: block; padding: .65rem .75rem; color: #1c1b18; font: 500 .52rem/1.5 var(--mono); }
+.keystone-spec code b { color: #963113; font-weight: 700; }
+.keystone-spec code strong { font-weight: 700; }
+
 .reveal {
   transition: opacity 850ms cubic-bezier(.22, 1, .36, 1),
     transform 850ms cubic-bezier(.22, 1, .36, 1);
